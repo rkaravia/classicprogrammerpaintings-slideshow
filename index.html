@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app="cppSlideApp" ng-strict-di>
+    <head>
+        <meta charset="utf-8">
+        <title>classicprogrammerpaintings-slideshow</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <link rel="stylesheet" href="css/style.css">
+        <base href="/classicprogrammerpaintings-slideshow/">
+    </head>
+
+    <body ng-controller="SlideCtrl">
+        <div class="wrapper">
+            <div ng-repeat="slide in slides" init-slideshow>
+                <div class="image">
+                    <a rel="gallery" href="{{ slide.photo }}" title="{{ slide.caption }}">
+                        <img ng-src="{{ slide.photo_small }}">
+                    </a>
+                    <div class="caption">
+                        {{ slide.summary }}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" integrity="sha384-8C+3bW/ArbXinsJduAjm9O7WNnuOcO+Bok/VScRYikawtvz4ZPrpXtGfKIewM9dK" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.min.js" integrity="sha384-BPMnzv7+uWH6t3p3zaT3Qj/ckYZnlZepRTJeBRHfBGRBrHhQ2CX19al1HozjDv7r" crossorigin="anonymous"></script>
+        <script src="js/bundle.js"></script>
+    </body>
+</html>
